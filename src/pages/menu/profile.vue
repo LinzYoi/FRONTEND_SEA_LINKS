@@ -48,88 +48,110 @@
     </div>
 
     <div v-if="$vuetify.display.smAndDown" align="center" class="my-5">
-      <div>
-        <div style="width: fit-content">
-          <v-alert variant="tonal" density="comfortable" rounded="lg" color="sea_links_color">
-            <span>
-              <v-icon class="text-black">mdi-alert-circle-outline</v-icon>
-            </span>
-            <span class="font-weight-bold text-black ms-2">Hello, you have logged in as a&nbsp;</span>
-            <span class="font-weight-bold text-blue-darken-4">{{ useUserStore().getBusinessType }}</span>            
-          </v-alert>
-        </div>
+      <div class="d-flex align-center justify-center" style="width: fit-content">
+        <v-alert variant="tonal" density="comfortable" rounded="lg" color="sea_links_color">
+          <span>
+            <v-icon class="text-blue-darken-4">mdi-alert-circle</v-icon>
+          </span>
+          <span class="font-weight-bold text-black ms-2">Hello, you have sign in as a&nbsp;</span>
+          <span class="font-weight-bold text-blue-darken-4">{{ useUserStore().getBusinessType }}</span>            
+        </v-alert>
       </div>
     </div>
     
-    <v-row align="center" class="mt-1">
-      <v-col cols="12" sm="6" md="4" lg="3">
+    <v-row align="start" class="mt-1">
+      <v-col cols="12" sm="6">
         <v-card
-          class="mx-auto"
-          to="/sea-links/menu/home"      
-          prepend-icon="mdi-account-circle-outline"
-          append-icon="mdi-chevron-right"
+          class="mx-auto pa-1 pb-3"          
           rounded="xl"          
           rel="noopener"
-          elevation="8"
-          title="Edit Profile"
-          subtitle="Name, phone no, address, email, ..."    
-        ></v-card>
+          elevation="2"          
+        >
+          <v-card-title class="text-caption text-grey-darken-2">Account Settings</v-card-title>
+          <v-row align="center">
+            <v-col cols="12" class="item-hover">
+              <div class="d-flex align-center raleway-font px-3" style="font-weight: 600;" @click="router.push('/sea-links/menu/profile/profile-information')">
+                <v-icon class="text-grey-darken-2">mdi-account-circle-outline</v-icon>
+                <span class="ms-2">Profile Information</span>
+                <v-spacer></v-spacer>
+                <v-icon class="text-grey-darken-2">mdi-chevron-right</v-icon>
+              </div>              
+            </v-col>
+
+            <v-divider class="mx-6"></v-divider>
+
+            <v-col cols="12" class="item-hover">
+              <div class="d-flex align-center raleway-font px-3" style="font-weight: 600;" @click="router.push('/sea-links/menu/profile/profile-information')">
+                <v-icon class="text-grey-darken-2">mdi-bell-outline</v-icon>
+                <span class="ms-2">Notification Settings</span>
+                <v-spacer></v-spacer>
+                <v-icon class="text-grey-darken-2">mdi-chevron-right</v-icon>
+              </div>
+            </v-col>            
+          </v-row>
+        </v-card>
       </v-col>
-      <v-col cols="12" sm="6" md="4" lg="3">
+
+      <v-col cols="12" sm="6">
         <v-card
-          class="mx-auto"
-          to="/sea-links/menu/home"      
-          prepend-icon="mdi-chart-bar"
-          append-icon="mdi-chevron-right"
-          rounded="xl"
+          class="mx-auto pa-1 pb-3"          
+          rounded="xl"          
           rel="noopener"
-          elevation="8"
-          title="Transaction & Reports"
-          subtitle="Download transaction, details, orders, deliveries"    
-        ></v-card>
+          elevation="2"          
+        >
+          <v-card-title class="text-caption text-grey-darken-2">Other Features</v-card-title>
+          <v-row align="center">
+            <v-col cols="12" class="item-hover">
+              <div class="d-flex align-center raleway-font px-3" style="font-weight: 600;" @click="router.push('/sea-links/menu/profile/profile-information')">
+                <v-icon class="text-grey-darken-2">mdi-chart-bar</v-icon>
+                <span class="ms-2">Transaction & Reports</span>
+                <v-spacer></v-spacer>
+                <v-icon class="text-grey-darken-2">mdi-chevron-right</v-icon>
+              </div>              
+            </v-col>
+
+            <v-divider class="mx-6"></v-divider>
+
+            <v-col cols="12" class="item-hover">
+              <div class="d-flex align-center raleway-font px-3" style="font-weight: 600;" @click="router.push('/sea-links/menu/profile/profile-information')">
+                <v-icon class="text-grey-darken-2">mdi-human-greeting-proximity</v-icon>
+                <span class="ms-2">Referrals</span>
+                <v-spacer></v-spacer>
+                <v-icon class="text-grey-darken-2">mdi-chevron-right</v-icon>
+              </div>
+            </v-col>
+
+            <v-divider class="mx-6"></v-divider>
+
+            <v-col cols="12" class="item-hover">
+              <div class="d-flex align-center raleway-font px-3" style="font-weight: 600;" @click="router.push('/sea-links/menu/profile/profile-information')">
+                <v-icon class="text-grey-darken-2">mdi-information-outline</v-icon>
+                <span class="ms-2">About Us</span>
+                <v-spacer></v-spacer>
+                <v-icon class="text-grey-darken-2">mdi-chevron-right</v-icon>
+              </div>              
+            </v-col>
+          </v-row>
+        </v-card>
       </v-col>
-      <v-col cols="12" sm="6" md="4" lg="3">
-        <v-card
-          class="mx-auto"
-          to="/sea-links/menu/home"      
-          prepend-icon="mdi-bell-outline"
-          append-icon="mdi-chevron-right"
-          rounded="xl"
-          rel="noopener"
-          elevation="8"
-          title="Notification Settings"
-          subtitle="Mute, unmute, set location & tracking setting"    
-        ></v-card>
-      </v-col>
-      <v-col cols="12" sm="6" md="4" lg="3">
-        <v-card
-          class="mx-auto"
-          to="/sea-links/menu/home"      
-          prepend-icon="mdi-human-greeting-proximity"
-          append-icon="mdi-chevron-right"
-          rounded="xl"
-          rel="noopener"
-          elevation="8"
-          title="Referrals"
-          subtitle="Check no of friends & earn"    
-        ></v-card>
-      </v-col>
-      <v-col cols="12" sm="6" md="4" lg="3">
-        <v-card
-          class="mx-auto"
-          to="/sea-links/menu/home"      
-          prepend-icon="mdi-information-outline"
-          append-icon="mdi-chevron-right"
-          rounded="xl"
-          rel="noopener"
-          elevation="8"
-          title="About Us"
-          subtitle="Know more about us, terms & conditions"    
-        ></v-card>
-      </v-col>                                                
-    </v-row>  
+    </v-row>      
     
-    <div v-if="$vuetify.display.smAndDown" class="d-flex align-center justify-center mt-7">      
+    <div class="mt-6">
+      <v-btn    
+        class="font-weight-bold raleway-font"
+        style="letter-spacing: 0px;"
+        size="large"
+        variant="outlined"
+        color="sea_links_color"
+        text="Log Out"
+        rounded="xl"
+        block
+        @click="logout()"
+      >
+      </v-btn>
+    </div>
+    
+    <!-- <div v-if="$vuetify.display.smAndDown" class="d-flex align-center justify-center mt-7">      
       <v-btn    
         class="font-weight-bold raleway-font"
         style="letter-spacing: 0px;"
@@ -143,7 +165,7 @@
           <v-icon class="text-red ms-1">mdi-logout</v-icon>
         </template> 
       </v-btn>
-    </div>
+    </div> -->
   </v-container>
 </template>
 
@@ -156,3 +178,16 @@ const logout = () => {
   useUserStore().logout();  
 };
 </script>
+
+<style scoped>
+.item-hover {
+  transition: all 0.3s ease-in-out;
+}
+
+.item-hover:hover {
+  cursor: pointer;
+  padding-left: 25px;
+  color: #003399;  
+}
+
+</style>

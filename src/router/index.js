@@ -15,7 +15,10 @@ const routes = [
     component: () => import('@/layouts/MainLayout.vue'),
     children: [      
       { path: 'menu/home', component: () => import('@/pages/menu/home.vue') },
+
       { path: 'menu/profile', component: () => import('@/pages/menu/profile.vue') },
+      { path: 'menu/profile/profile-information', component: () => import('@/pages/menu/profile/profile-information.vue') },
+      
     ],
   },
 ];
